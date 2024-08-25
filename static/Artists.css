@@ -1,0 +1,61 @@
+body {
+    background-color: #ecf0f1; /* Couleur de fond douce et apaisante */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff; /* Fond blanc pour la zone de contenu */
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre plus douce */
+}
+
+.img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Espace au-dessus du tableau */
+}
+
+th, td {
+    border: 1px solid #bdc3c7; /* Bordure plus douce et moderne */
+    padding: 12px; /* Espacement amélioré */
+    text-align: left;
+}
+
+th {
+    background-color: #34495e; /* Couleur de fond des en-têtes de tableau */
+    color: #ecf0f1; /* Couleur du texte des en-têtes */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+td {
+    color: #2c3e50; /* Couleur du texte des cellules */
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    margin-top: 20px;
+    background-color: #3498db; /* Couleur du bouton */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s; /* Transition douce pour les effets */
+}
+
+.button:hover {
+    background-color: #2980b9; /* Couleur du bouton au survol */
+    transform: scale(1.05); /* Effet d'agrandissement au survol */
+}

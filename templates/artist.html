@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/Artists.css">
+    <title>Artist Details</title>
+</head>
+
+<body>
+    <div class="container">
+        <img src="{{.Artist.ImageURL}}" class="img" alt="Artist Image">
+        <table >
+            <tr>
+                <th>Name</th>
+                <td>{{.Artist.Name}}</td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>{{ range .Artist.Members }}{{.}} <br> {{end}}</td>
+            </tr>
+            <tr>
+                <th>Creation Date</th>
+                <td>{{.Artist.CreationDate}}</td>
+            </tr>
+            <tr>
+                <th>First Album</th>
+                <td>{{.Artist.FirstAlbum}}</td>
+            </tr>
+            <tr>
+                <th>Locations</th>
+                <td>{{ range .Locations }}{{.}} <br> {{end}}</td>
+            </tr>
+            <tr>
+                <th>Concert Dates</th>
+                <td>{{ range .Dates }}{{.}} <br> {{end}}</td>
+            </tr>
+            <tr>
+                <th>Relations</th>
+                <td>{{ range $key, $values := .Relations }} {{$key}}: {{ range $values }} {{.}}
+                    <br> {{end}}
+                    <br> {{end}}
+                </td>
+            </tr>
+        </table>
+        <a href="/" class="button">Home Page</a>
+    </div>
+</body>
+
+</html>

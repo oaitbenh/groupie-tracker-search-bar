@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Gallery</title>
+    <link rel="stylesheet" href="/static/home.css">
+</head>
+
+<body>
+    <header>
+        <p class="title1">Groupie Tracker</p>
+        <p class="title2">Listening to Music is a pointless distraction that achieves nothing.</p>
+        <br>
+        <div class="search-box">
+            <form action="/" method="get">
+                <input type="search" list="search" name="query" placeholder="Search for artists..." id="Search for artists"/>
+                <datalist id="search">
+                    {{range .AllArtist}}
+                    <option value="{{.Name}}">Artist</option>
+                    {{range .Members}}
+                    <option value="{{.}}">Member</option>
+                    {{end}}
+                    <option value="{{.CreationDate}}">Creation Date</option>
+                    <option value="{{.FirstAlbum}}">First Album</option>
+                    {{end}}
+                    {{range .Locations}}
+                        {{range .Location}}
+                            <option value="{{.}}">Location</option>
+                        {{end}}
+                    {{end}}
+                </datalist>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+
+    <div class="container">
+        {{range .Artist}}
+        <a href="/artists/{{.ID}}" class="card">
+            <img src="{{.ImageURL}}" alt="Image of {{.Name}}" class="card-img">
+            <div class="card-info">
+                <table>
+                    <tr>
+                        <td class="suj">Name:</td>
+                        <td class="card-title">{{.Name}}</td>
+                    </tr>
+                    <tr>
+                        <td class="suj">Members:</td>
+                        <td>
+                            <ul class="members-list">
+                                {{range .Members}}
+                                <li>{{.}}</li>
+                                {{end}}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="suj">Creation Date:</td>
+                        <td class="card-detail">{{.CreationDate}}</td>
+                    </tr>
+                    <tr>
+                        <td class="suj">First Album:</td>
+                        <td class="card-detail">{{.FirstAlbum}}</td>
+                    </tr>
+                </table>
+            </div>
+        </a>
+        {{end}}
+    </div>
+   <center> <a href="/"><button class="button">return</button></a> </center>
+</body>
+
+</html>
